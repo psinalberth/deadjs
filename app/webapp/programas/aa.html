@@ -1,0 +1,19 @@
+<md-dialog aria-label="{{titulo}}" ng-cloak flex="50" ng-controller="DialogController">
+  <form>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>{{titulo}}</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="cancel()">
+        <md-icon md-svg-src="bower_components/img/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-dialog-content style="max-width:800px;max-height:810px;">
+    <div class="md-dialog-content">
+        <div ng-include src="'/app/webapp/programas/_form.html'" scope="" onload="">
+        </div>
+    </div>
+  </md-dialog-content>
+  </form>
+</md-dialog>

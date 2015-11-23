@@ -1,0 +1,72 @@
+<div class="row">
+	<md-content layout-padding layout="row" layout-sm="column">
+	    <md-input-container flex>
+	      <label for="filtro">Filtrar</label>
+	      <i class="fa fa-trash">cfgg</i>
+	      <input ng-model="nome">
+	    </md-input-container>
+	    <md-input-container>
+	      <md-button class="md-raised md-primary" ng-show="!programa.id" ng-controller="ModalDemoCtrl" ng-click="verify('Programa', './webapp/programas/aa.html')">Novo</md-button>
+	    </md-input-container>
+	</md-content>
+</div>
+<div class="row">
+	<div class="col m6 s12 offset-m3">
+		<my-modal ng-form-path="green">Teste!</my-modal>
+		<table class="table table-bordered table-stripped">
+			<thead>
+				<tr>
+					<td><a href="#">Nome</a></td>
+					<td><a href="#">Sigla</a></td>
+					<td><a href="#">Descrição</a></td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="clickable" ng-repeat="programa in programas | filterBy:nome" ng-controller="ModalDemoCtrl" ng-click="verify('Programa', './webapp/programas/aa.html')">
+					<a href="#">
+					<td>{{programa.nome}}</td>
+					<td>{{programa.sigla}}</td>
+					<td>{{programa.descricao}}</td>
+				</tr>
+			</tbody>
+		</table>
+		
+	</div>
+</div>
+<!-- <div ng-controller="ModalDemoCtrl">
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Im a modal!</h3>
+        </div>
+        <div class="modal-body">
+            <form name="">
+				<md-content layout-padding layout="row" layout-sm="column">
+				    <md-input-container flex>
+				      <label for="nome">Nome</label>
+				      <i class="fa fa-trash"></i>
+				      <input ng-model="programa.nome" id="nome">
+				    </md-input-container>
+			    </md-content>
+			    <md-content layout-padding layout="row" layout-sm="column">
+				    <md-input-container flex>
+				      <label for="sigla">Sigla</label>
+				      <input ng-model="programa.sigla" id="sigla">
+				    </md-input-container>
+			    </md-content>
+			    <md-content layout-padding layout="row" layout-sm="column">
+			    	<md-input-container flex>
+			        	<label for="descricao">Descrição</label>
+			        	<textarea ng-model="programa.descricao" columns="1" md-maxlength="200" id="descricao"></textarea>
+		      		</md-input-container>
+			    </md-content>
+			    <md-content layout-padding layout="row" layout-sm="column">
+			    	<md-button class="md-raised md-primary" ng-click="create()">Salvar</md-button>
+			    </md-content>
+			    </form>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+</div> -->
